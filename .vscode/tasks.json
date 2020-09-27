@@ -11,6 +11,17 @@
                 "panel": "shared"
             },
             "problemMatcher": []
+        },
+        {
+            "label": "Run cart pole with critic",
+            "type": "shell",
+            "command": "${command:python.interpreterPath} ${workspaceRoot}/cart_pole/cart_pole.py",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
         }
     ]
 }
