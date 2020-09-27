@@ -1,3 +1,6 @@
+import os
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
+
 import gym
 import numpy as np
 import tensorflow as tf
@@ -22,7 +25,6 @@ class CriticModel:
         self._optimizer = keras.optimizers.Adam(learning_rate=0.01)
         self._huber_loss = keras.losses.Huber()
         self._eps = np.finfo(np.float32).eps.item()  # Smallest number such that 1.0 + eps != 1.0
-        # self._tape = tf.GradientTape().__enter__()
 
         self._episode_count = 0
         self._total_reward: float = 0.0
@@ -90,13 +92,6 @@ class CriticModel:
         self._log_action_history.clear()
 
         return (self._episode_count, self._total_reward)
-
-
-def model_creator(env: TimeLimit):
-    action_space: gym.spaces.discrete.Discrete = env.action_space
-    observation_space: gym.spaces.box.Box = env.observation_space
-
-    return CriticModel(observation_space.shape[0], action_space.n)
 
 
 env: gym.wrappers.time_limit.TimeLimit = gym.make("CartPole-v0")

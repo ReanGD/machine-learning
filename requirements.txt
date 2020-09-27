@@ -1,1 +1,3 @@
 gym==0.17.2
+gym-racer==0.0.2
+matplotlib==3.3.2
