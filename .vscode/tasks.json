@@ -24,6 +24,17 @@
             "problemMatcher": []
         },
         {
+            "label": "Run mountain car (q_learning)",
+            "type": "shell",
+            "command": "${command:python.interpreterPath} ${workspaceRoot}/mountain_car/q_learning.py",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
             "label": "Run linear func",
             "type": "shell",
             "command": "${command:python.interpreterPath} ${workspaceRoot}/linear_func/linear_func.py",

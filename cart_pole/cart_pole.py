@@ -94,7 +94,7 @@ class CriticModel:
         return (self._episode_count, self._total_reward)
 
 
-env: gym.wrappers.time_limit.TimeLimit = gym.make("CartPole-v0")
+env: TimeLimit = gym.make("CartPole-v0")
 action_space: gym.spaces.discrete.Discrete = env.action_space
 observation_space: gym.spaces.box.Box = env.observation_space
 env.seed(42)
